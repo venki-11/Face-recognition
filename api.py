@@ -26,12 +26,11 @@ async def predict(item: Model):
     return {"result": similarity_percentage}
 
 if __name__=="__main__":
-    ngrok_tunnel = ngrok.connect(8000)
+    ngrok_tunnel = ngrok.connect(9002)
     public_url = ngrok_tunnel.public_url
     print(f"ngrok tunnel is active. Public URL: {public_url}")
     try:
         # Start the FastAPI server
-        import uvicorn
         uvicorn.run(app,port=9002,host="0.0.0.0")
     except KeyboardInterrupt:
         # Stop the ngrok tunnel when the server is stopped

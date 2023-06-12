@@ -6,5 +6,5 @@ data = {
 }
 
 # Send the POST request to the FastAPI application
-response = requests.post("http://localhost:9002/predict", json=data)
+response = requests.post("https://0104-106-51-0-15.ngrok.io/predict", json=data)
 print(response.json())
